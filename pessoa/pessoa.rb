@@ -1,7 +1,11 @@
 class Pessoa
+  def initialize(name)
+    @name = name
+  end
+
   def documento
-    cpf = 'CPF: 123.456.789-00'
-    puts cpf
+    cpf = '123.456.789-00'
+    puts "Nome: #{@name} / CPF: #{cpf}"
   end
 end
 
@@ -10,13 +14,13 @@ end
 
 class PessoaJuridica < Pessoa
   def documento
-    cnpj = 'CNPJ: 12.123.456/0001-00'
-    puts cnpj
+    cnpj = '12.123.456/0001-00'
+    puts "Empresa: #{@name} / CNPJ: #{cnpj}"
   end
 end
 
-pf = PessoaFisica.new
-pj = PessoaJuridica.new
+pf = PessoaFisica.new('Felipe')
+pj = PessoaJuridica.new('BittEnterprises')
 
 pf.documento
 pj.documento
